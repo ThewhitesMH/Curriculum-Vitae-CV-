@@ -1,21 +1,598 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Currículum profesional de ThewhitesMH, estudiante de Ingeniería en Sistemas Computacionales orientado a Ciberseguridad.">
+<title>ThewhitesMH | Cybersecurity CV</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --navy: #10233f;
+    --blue: #2563eb;
+    --steel: #64748b;
+    --light: #f1f5f9;
+    --white: #ffffff;
+    --border: #dce4ed;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #e8edf4;
+    color: #172337;
+    line-height: 1.6;
+    padding: 35px 15px;
+}
+
+.resume {
+    max-width: 1050px;
+    margin: auto;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 315px 1fr;
+    box-shadow: 0 20px 60px rgba(15, 35, 63, .13);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    background: var(--navy);
+    color: white;
+    padding: 42px 30px;
+}
+
+.brand {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #60a5fa;
+    margin-bottom: 35px;
+}
+
+.avatar {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    background: #1e3a5f;
+    border: 3px solid #60a5fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.identity h1 {
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.identity p {
+    color: #93c5fd;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.side-section {
+    margin-top: 35px;
+}
+
+.side-section h2 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #365273;
+    padding-bottom: 11px;
+    margin-bottom: 17px;
+    color: #93c5fd;
+}
+
+.side-section p,
+.side-section li {
+    font-size: 12px;
+    color: #d1dbe8;
+    margin-bottom: 11px;
+    overflow-wrap: anywhere;
+}
+
+.side-section ul {
+    list-style: none;
+}
+
+.side-section li::before {
+    content: "›";
+    color: #60a5fa;
+    margin-right: 9px;
+    font-weight: 800;
+}
+
+.contact-label {
+    color: #93c5fd;
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+/* TECH STACK */
+
+.tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.tech span {
+    background: #1e3a5f;
+    border: 1px solid #365273;
+    color: #e2e8f0;
+    padding: 6px 9px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+/* MAIN CONTENT */
+
+.content {
+    padding: 48px 42px;
+}
+
+.top-label {
+    font-size: 11px;
+    color: var(--blue);
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero h2 {
+    font-size: 31px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.hero h3 {
+    font-size: 15px;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: var(--steel);
+    font-size: 13px;
+}
+
+.section {
+    margin-top: 38px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.entry {
+    border-left: 2px solid #bfdbfe;
+    padding-left: 18px;
+    margin-bottom: 25px;
+}
+
+.entry h3 {
+    font-size: 14px;
+    color: #172337;
+    font-weight: 700;
+}
+
+.date {
+    font-size: 11px;
+    color: var(--blue);
+    font-weight: 700;
+    margin: 4px 0 8px;
+}
+
+.entry p,
+.entry li {
+    font-size: 12px;
+    color: var(--steel);
+}
+
+.entry ul {
+    padding-left: 17px;
+    margin-top: 8px;
+}
+
+.entry li {
+    margin-bottom: 5px;
+}
+
+.highlight {
+    background: #f1f6fd;
+    border: 1px solid #dceafe;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 14px;
+}
+
+.highlight h3 {
+    color: var(--navy);
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.highlight p {
+    color: var(--steel);
+    font-size: 12px;
+}
+
+.footer {
+    margin-top: 45px;
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+    font-size: 10px;
+    color: #94a3b8;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+/* PDF BUTTON */
+
+.actions {
+    max-width: 1050px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.actions button {
+    padding: 13px 22px;
+    background: var(--navy);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.actions button:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+}
+
+@media(max-width: 750px) {
+    body {
+        padding: 0;
+    }
+
+    .resume {
+        grid-template-columns: 1fr;
+        border-radius: 0;
+    }
+
+    .sidebar {
+        padding: 35px 28px;
+    }
+
+    .content {
+        padding: 35px 28px;
+    }
+
+    .hero h2 {
+        font-size: 26px;
+    }
+
+    .actions {
+        padding: 15px;
+    }
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    body {
+        padding: 0;
+        background: white;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .resume {
+        width: 210mm;
+        max-width: none;
+        min-height: 297mm;
+        grid-template-columns: 68mm 142mm;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .sidebar {
+        padding: 35px 24px;
+    }
+
+    .content {
+        padding: 38px 30px;
+    }
+
+    .actions {
+        display: none;
+    }
+
+    .entry, .highlight, .side-section {
+        break-inside: avoid;
+    }
+}
+</style>
 </head>
+
 <body>
-    <p>Hello, pUTO</p>
-    <P> style="color: red;">El Judio mas kbron</P>
-    <P> style="color: red;">El Judio mas kbron</P>
-    <P> style="color: red;">El Judio mas kbron</P>
-    <P> style="color: red;">El Judio mas kbron</P>
-    <P> style="color: red;">El Judio mas kbron</P>
-    <P> style="color: red;">El Judio mas kbron</P>
-    <P> style="color: red;">El Judio mas kbron</P>
-    <P> style="color: red;">El Judio mas kbron</P>
-    <P> style="color: red;">El Judio mas kbron</P>
-    <P> style="color: red;">El Judio mas kbron</P>
+
+<div class="resume">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">THEWHITESMH / CV</div>
+
+        <div class="avatar">W</div>
+
+        <div class="identity">
+            <h1>ThewhitesMH</h1>
+            <p>Cybersecurity Enthusiast</p>
+            <p>Estudiante de Ingeniería en Sistemas Computacionales</p>
+        </div>
+
+        <div class="side-section">
+            <h2>Contacto</h2>
+
+            <p>
+                <span class="contact-label">Correo electrónico</span>
+                <span>Pendiente de agregar</span>
+            </p>
+
+            <p>
+                <span class="contact-label">Teléfono</span>
+                <span>Pendiente de agregar</span>
+            </p>
+
+            <p>
+                <span class="contact-label">Ubicación</span>
+                Celaya, Guanajuato, México
+            </p>
+
+            <p>
+                <span class="contact-label">GitHub</span>
+                <span>Agregar perfil de GitHub</span>
+            </p>
+        </div>
+
+        <div class="side-section">
+            <h2>Conocimientos técnicos</h2>
+
+            <div class="tech">
+                <span>Linux</span>
+                <span>Windows</span>
+                <span>Android</span>
+                <span>Java</span>
+                <span>Python</span>
+                <span>Git</span>
+                <span>GitHub</span>
+                <span>ADB</span>
+                <span>Fastboot</span>
+            </div>
+        </div>
+
+        <div class="side-section">
+            <h2>Idiomas</h2>
+            <p>Español — Nativo</p>
+            <p>Inglés — Básico</p>
+        </div>
+
+        <div class="side-section">
+            <h2>Intereses profesionales</h2>
+            <ul>
+                <li>Ciberseguridad</li>
+                <li>Seguridad de sistemas</li>
+                <li>Seguridad móvil</li>
+                <li>Linux y software libre</li>
+                <li>Desarrollo de software</li>
+                <li>Investigación tecnológica</li>
+            </ul>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+        <header class="hero">
+            <div class="top-label">Currículum Vitae</div>
+
+            <h2>ThewhitesMH</h2>
+
+            <h3>
+                Ingeniería en Sistemas Computacionales
+                | Enfoque en Ciberseguridad
+            </h3>
+
+            <p>
+                Estudiante de Ingeniería en Sistemas Computacionales
+                con interés en la ciberseguridad, la seguridad de
+                sistemas operativos y las tecnologías móviles.
+                Cuento con experiencia de aprendizaje mediante
+                proyectos personales y académicos, exploración
+                de entornos Linux y Android, así como conocimientos
+                de programación y herramientas de desarrollo.
+                Me caracterizo por la curiosidad tecnológica,
+                el pensamiento lógico y la disposición para
+                aprender y resolver problemas.
+            </p>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Formación académica</h2>
+
+            <div class="entry">
+                <h3>
+                    Ingeniería en Sistemas Computacionales
+                </h3>
+
+                <div class="date">2025 — Actualidad</div>
+
+                <p>
+                    Instituto Tecnológico de Celaya — Tecnológico
+                    Nacional de México (TecNM).
+                </p>
+
+                <p>
+                    Formación académica en programación,
+                    fundamentos de sistemas computacionales,
+                    algoritmos y desarrollo de software.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Proyectos personales</h2>
+
+            <div class="highlight">
+                <h3>Investigación y personalización de Android</h3>
+
+                <p>
+                    Exploración de sistemas Android, herramientas
+                    ADB y Fastboot, desbloqueo de bootloader,
+                    instalación y pruebas de ROMs personalizadas,
+                    así como análisis de compatibilidad de dispositivos.
+                </p>
+            </div>
+
+            <div class="highlight">
+                <h3>Entornos Linux y sistemas operativos</h3>
+
+                <p>
+                    Instalación, configuración y personalización
+                    de distribuciones Linux. Experimentación con
+                    Fedora, herramientas de desarrollo y entornos
+                    de escritorio.
+                </p>
+            </div>
+
+            <div class="highlight">
+                <h3>Desarrollo de software</h3>
+
+                <p>
+                    Desarrollo de ejercicios y aplicaciones
+                    académicas utilizando Java y Python,
+                    aplicando fundamentos de programación
+                    y resolución de problemas.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Habilidades técnicas</h2>
+
+            <div class="entry">
+                <h3>Sistemas operativos</h3>
+                <p>
+                    Linux, Fedora, Windows y Android.
+                    Instalación, configuración y personalización
+                    de entornos.
+                </p>
+            </div>
+
+            <div class="entry">
+                <h3>Programación</h3>
+                <p>
+                    Java y Python. Fundamentos de programación
+                    y resolución lógica de problemas.
+                </p>
+            </div>
+
+            <div class="entry">
+                <h3>Herramientas de desarrollo</h3>
+                <p>
+                    Git, GitHub, ADB, Fastboot y herramientas
+                    de línea de comandos.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Competencias</h2>
+
+            <div class="entry">
+                <ul>
+                    <li>Pensamiento analítico y lógico.</li>
+                    <li>Investigación y aprendizaje autónomo.</li>
+                    <li>Resolución de problemas técnicos.</li>
+                    <li>Adaptabilidad a nuevas tecnologías.</li>
+                    <li>Interés por la seguridad informática.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Certificaciones</h2>
+
+            <div class="entry">
+                <h3>En formación</h3>
+                <p>
+                    Actualmente sin certificaciones profesionales.
+                    Interés en formación especializada en
+                    ciberseguridad y seguridad informática.
+                </p>
+            </div>
+        </section>
+
+        <div class="footer">
+            THEWHITESMH · CYBERSECURITY · 2026
+        </div>
+
+    </main>
+</div>
+
+<div class="actions">
+    <button onclick="window.print()">
+        Descargar / Imprimir CV
+    </button>
+</div>
+
 </body>
 </html>
